@@ -1,0 +1,117 @@
+textarea {
+    resize: none;
+}
+.container{
+    display: none ;
+    width:100%;
+
+}
+.header-data{
+
+    background-color: #5474fd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    height: 80px;
+    color: #ffffff;
+}
+.menu-link{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    padding-left: 40px;
+    text-transform: uppercase;
+}
+.logo{
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
+}
+#logo-name{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#user-name{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.status-create{
+    padding-top: 50px;
+    text-align: right;
+    width: 70%;
+    display: flex;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+.post-bar{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 65%;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-avatar{
+    display: flex;
+    align-items: center;
+    padding: 0 30px 15px 0;
+    width: 100%;
+    justify-content: space-between;
+}
+.post-avatar-info{
+    display: flex;
+    align-items: center;
+}
+.options{
+    float: right;
+}
+.content-main{
+    display: flex;
+    justify-content: space-around;}
+.content-sidebar-left-content{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+.content-sidebar-right-content{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+.content-post{
+    width: 50%;
+    height: auto;
+    border-right: 1px solid;
+    border-bottom:  1px solid;
+    border-left:  1px solid;
+}
+.post-section{
+    padding: 15px 0px 15px 30px;
+    height: 450px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.data_text{
+    word-break: break-word;
+}

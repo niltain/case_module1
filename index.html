@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Citrus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body id="main" onload = "userName()">
+<div class="popup" id="popup-1">
+    <div class="content" id="signIn">
+        <h1>Sign in</h1>
+        <div class="input-field"><input type="text" id="usrName" name="usrname" placeholder="Email" class="validate">
+        </div>
+        <div class="input-field"><input type="password" id="psw" name="psw" placeholder="Password" class="validate">
+        </div>
+        <div class="button">
+            <button class="first-button" id="firstBtn" onclick="login()">Sign in</button>
+            <button onclick="signUp()" id="sndBtn" class="first-button">Sign Up</button>
+        </div>
+    </div>
+    <div id="signUp" class="modal">
+        <div class="popup-container">
+            <div class="popup-text">
+                <h1>Sign Up</h1>
+                <p style="font-size: 15px; padding: 20px 0 0 0;">Please fill in this form to create an account.</p>
+            </div>
+            <label class="popup-label"><b style="padding-bottom: 10px;">Username</b>
+                <input class="label-input" type="text" placeholder="Enter Username" name="username"  id = "userName" required>
+            </label>
+            <label class="popup-label"><b style="padding-bottom: 10px;">Password</b>
+                <input class="label-input" type="password" placeholder="Enter Password" id="psw-create" name="psw" required>
+            </label>
+            <label class="popup-label"><b style="padding-bottom: 10px;">Repeat Password</b>
+                <input class="label-input" type="password" placeholder="Repeat Password" id="repeat-psw" name="psw-repeat" required>
+            </label>
+            <div class="clearfix">
+                <button type="button" onclick="cancel()"
+                        class="cancelBtn">Cancel
+                </button>
+                <button type="button" class="signupBtn" onclick="addAccount()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" id="container">
+    <div class="header-data">
+        <div class="logo">
+            <a id="logo-name" href="index.html" title="">
+                <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+                Citrus
+            </a>
+        </div>
+        <nav class="menu-nav">
+            <a class="menu-link" href="#">
+                        <span>
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                        </span>
+                Home
+            </a>
+            <a class="menu-link" href="#">
+                        <span>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </span>
+                Profile
+            </a>
+            <a class="menu-link" href="#">
+                        <span>
+                            <i class="fa fa-bell" aria-hidden="true"></i>
+                        </span>
+                Notification
+            </a>
+            <a class="menu-link" href="#"><span>
+                <i class="fa fa-venus-mars" aria-hidden="true"></i>
+            </span>
+                Friends</a>
+            <a class="menu-link" href="#"><span>
+               <i class="fa fa-video-camera" aria-hidden="true"></i>
+            </span>
+                Watch</a>
+        </nav>
+        <div class="user-account">
+            <div class="user-info" onclick="logOut()">
+                <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 30px"></i>
+                <a id="user-name" class="user-name" href="#"></a>
+            </div>
+        </div>
+    </div>
+    <div class="content-main" >
+        <!--        <div class="content-sidebar-left">-->
+        <!--            <div class="content-sidebar-left-content">-->
+        <!--            <div class="post-avatar-info">-->
+        <!--                <div class="user-photo">-->
+        <!--                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                </div>-->
+        <!--                <div class="user-name">Admin</div>-->
+        <!--            </div>-->
+        <!--            <div class="post-avatar-info">-->
+        <!--                <div class="user-photo">-->
+        <!--                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                </div>-->
+        <!--                <div class="user-name">Admin</div>-->
+        <!--            </div>-->
+        <!--            <div class="post-avatar-info">-->
+        <!--                <div class="user-photo">-->
+        <!--                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                </div>-->
+        <!--                <div class="user-name">Admin</div>-->
+        <!--            </div>-->
+        <!--            <div class="post-avatar-info">-->
+        <!--                <div class="user-photo">-->
+        <!--                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                </div>-->
+        <!--                <div class="user-name">Admin</div>-->
+        <!--            </div>-->
+        <!--            <div class="post-avatar-info">-->
+        <!--                <div class="user-photo">-->
+        <!--                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                </div>-->
+        <!--                <div class="user-name">Admin</div>-->
+        <!--            </div>-->
+        <!--            <div class="post-avatar-info">-->
+        <!--                <div class="user-photo">-->
+        <!--                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                </div>-->
+        <!--                <div class="user-name">Admin</div>-->
+        <!--            </div>-->
+        <!--            <div class="post-avatar-info">-->
+        <!--                <div class="user-photo">-->
+        <!--                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                </div>-->
+        <!--                <div class="user-name">Admin</div>-->
+        <!--            </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <div class="content-post">
+            <div class="status">
+                <div class="status-bar">
+                    <div class="status-create">
+                        <div class="user-photo">
+                            <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>
+                        </div>
+                        <div class="post-write">
+                            <form id="form">
+                                <textarea name="post" id="input" cols="50" rows="3"></textarea>
+                                <br> <br>
+                                <div id="msg"></div>
+                                <button type="submit">Post</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="post-section" id="posts">
+                    <div class="post-bar">
+                        <div class="post-avatar">
+                            <div class="post-avatar-info">
+                                <div class="user-photo">
+                                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>
+                                </div>
+                                <div class="user-name" ></div>
+                            </div>
+                            <span class="options">
+                        <i class="fa fa-pencil-square-o" onclick="editPost(this)" aria-hidden="true"></i>
+                        <i class="fa fa-trash-o" onclick=(deletePost(this)) aria-hidden="true"></i>
+                    </span>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda commodi
+                                delectus deleniti deserunt dolores doloribus hic illum, impedit inventore, ipsa laborum
+                                mollitia nemo nisi nobis odit officiis pariatur quis repellat rerum, saepe sequi
+                                similique
+                                totam ullam voluptate! Animi, autem cumque neque obcaecati odit officiis porro quaerat
+                                reprehenderit sit ut!</p>
+                        </div>
+                    </div>
+                    <div class="post-bar">
+                        <div class="post-avatar">
+                            <div class="post-avatar-info">
+                                <div class="user-photo">
+                                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>
+                                </div>
+                                <div class="user-name"></div>
+                            </div>
+                            <span class="options">
+                        <i class="fa fa-pencil-square-o" onclick="editPost(this)" aria-hidden="true"></i>
+                        <i class="fa fa-trash-o" onclick=(deletePost(this)) aria-hidden="true"></i>
+                    </span>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda commodi
+                                delectus deleniti deserunt dolores doloribus hic illum, impedit inventore, ipsa laborum
+                                mollitia nemo nisi nobis odit officiis pariatur quis repellat rerum, saepe sequi
+                                similique
+                                totam ullam voluptate! Animi, autem cumque neque obcaecati odit officiis porro quaerat
+                                reprehenderit sit ut!</p>
+                        </div>
+                    </div>
+                    <div class="post-bar">
+                        <div class="post-avatar">
+                            <div class="post-avatar-info">
+                                <div class="user-photo">
+                                    <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>
+                                </div>
+                                <div class="user-name"></div>
+                            </div>
+                            <span class="options">
+                        <i class="fa fa-pencil-square-o" onclick="editPost(this)" aria-hidden="true"></i>
+                        <i class="fa fa-trash-o" onclick=(deletePost(this)) aria-hidden="true"></i>
+                    </span>
+                        </div>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda commodi
+                                delectus deleniti deserunt dolores doloribus hic illum, impedit inventore, ipsa laborum
+                                mollitia nemo nisi nobis odit officiis pariatur quis repellat rerum, saepe sequi
+                                similique
+                                totam ullam voluptate! Animi, autem cumque neque obcaecati odit officiis porro quaerat
+                                reprehenderit sit ut!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--        <div class="content-sidebar-right">-->
+        <!--            <div class="content-sidebar-right-content">-->
+        <!--                <div class="post-avatar-info">-->
+        <!--                    <div class="user-photo">-->
+        <!--                        <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                    </div>-->
+        <!--                    <div class="user-name">Admin</div>-->
+        <!--                </div>-->
+        <!--                <div class="post-avatar-info">-->
+        <!--                    <div class="user-photo">-->
+        <!--                        <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                    </div>-->
+        <!--                    <div class="user-name">Admin</div>-->
+        <!--                </div>-->
+        <!--                <div class="post-avatar-info">-->
+        <!--                    <div class="user-photo">-->
+        <!--                        <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                    </div>-->
+        <!--                    <div class="user-name">Admin</div>-->
+        <!--                </div>-->
+        <!--                <div class="post-avatar-info">-->
+        <!--                    <div class="user-photo">-->
+        <!--                        <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                    </div>-->
+        <!--                    <div class="user-name">Admin</div>-->
+        <!--                </div>-->
+        <!--                <div class="post-avatar-info">-->
+        <!--                    <div class="user-photo">-->
+        <!--                        <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                    </div>-->
+        <!--                    <div class="user-name">Admin</div>-->
+        <!--                </div>-->
+        <!--                <div class="post-avatar-info">-->
+        <!--                    <div class="user-photo">-->
+        <!--                        <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                    </div>-->
+        <!--                    <div class="user-name">Admin</div>-->
+        <!--                </div>-->
+        <!--                <div class="post-avatar-info">-->
+        <!--                    <div class="user-photo">-->
+        <!--                        <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 35px"></i>-->
+        <!--                    </div>-->
+        <!--                    <div class="user-name">Admin</div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+    </div>
+</div>
+</body>
+<!--<script src="js/accInfo.js"></script>-->
+<script src="js/login.js"></script>
+<script src="js/index.js"></script>
+<script src="js/logout.js"></script>
+
+</html>
